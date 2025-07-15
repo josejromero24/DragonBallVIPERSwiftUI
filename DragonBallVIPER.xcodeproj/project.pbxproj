@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		FDF215F12E25D40F003E9832 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FDF215F02E25D40F003E9832 /* Alamofire */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		FDF215752E255BF9003E9832 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF215F12E25D40F003E9832 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = DragonBallVIPER;
 			packageProductDependencies = (
+				FDF215F02E25D40F003E9832 /* Alamofire */,
 			);
 			productName = DragonBallVIPER;
 			productReference = FDF215622E255BF8003E9832 /* DragonBallVIPER.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = FDF215592E255BF8003E9832;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FDF215EF2E25D40F003E9832 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FDF215632E255BF8003E9832 /* Products */;
 			projectDirPath = "";
@@ -550,6 +559,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FDF215EF2E25D40F003E9832 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FDF215F02E25D40F003E9832 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FDF215EF2E25D40F003E9832 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FDF2155A2E255BF8003E9832 /* Project object */;
 }
