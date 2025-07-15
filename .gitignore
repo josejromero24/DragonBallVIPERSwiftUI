@@ -1,1 +1,33 @@
+# Mac system files
+.DS_Store
+*.swp
+
+# Xcode user data
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.moved-aside
+
+# Xcode project files
+xcuserdata/
+DerivedData/
+.idea/
+*.xcworkspace/xcuserdata/
+
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+
+# Archives and builds
+*.xcarchive
+*.ipa
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Xcode Preview canvas state
+*.canvas
 **/xcuserdata/
+
