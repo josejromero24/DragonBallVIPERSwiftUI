@@ -19,36 +19,28 @@ struct CharacterRowView: View {
             } placeholder: {
                 ProgressView()
             }
-            .frame(width: 70, height: 100)
+            .frame(width: 80, height: 100)
             .clipShape(RoundedRectangle(cornerRadius: 12))
-            .shadow(radius: 4)
+            .shadow(color: Color.black.opacity(0.3), radius: 6, x: 0, y: 4)
 
-            VStack(alignment: .leading, spacing: 6) {
-                
-                HStack {
-                    Text("Name:")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                    Text(character.name)
-                        .font(.headline)
-                        .foregroundColor(.white)
-                }
+            VStack(alignment: .leading, spacing: 8) {
+                Text(character.name)
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundColor(.white)
 
-                HStack {
-                    Text("Race:")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                    Text("\(character.race)")
-                        .font(.subheadline)
+                HStack(spacing: 4) {
+                    Image(systemName: "leaf.fill")
+                        .foregroundColor(.yellow)
+                    Text(character.race)
+                        .font(.system(size: 14, weight: .medium))
                         .foregroundColor(.yellow)
                 }
 
-                HStack {
-                    Text("Affiliation:")
-                        .font(.caption)
-                        .foregroundColor(.gray)
+                HStack(spacing: 4) {
+                    Image(systemName: "flag.fill")
+                        .foregroundColor(character.affiliation.color)
                     Text(character.affiliation.rawValue)
-                        .font(.caption)
+                        .font(.system(size: 14, weight: .semibold))
                         .foregroundColor(character.affiliation.color)
                 }
             }
@@ -57,13 +49,42 @@ struct CharacterRowView: View {
             Spacer()
         }
         .padding()
-        .background(Color(.darkGray))
-        .cornerRadius(12)
-        .shadow(radius: 5)
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: gradientColors(for: character.race)),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        )
+        .cornerRadius(20)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20)
+                .stroke(Color.white.opacity(0.1), lineWidth: 1)
+        )
+        .shadow(color: Color.black.opacity(0.25), radius: 10, x: 0, y: 6)
+    }
+
+    // MARK: - Gradient helper
+
+    private func gradientColors(for race: String) -> [Color] {
+        switch race {
+        case "Saiyan":
+            return [Color.orange, Color.red]
+        case "Angel":
+            return [Color.cyan, Color.blue]
+        case "God":
+            return [Color.purple, Color.indigo]
+        case "Human":
+            return [Color.gray, Color.black]
+        case "Frieza Race":
+            return [Color.purple, Color.pink]
+        case "Android":
+            return [Color.green, Color.mint]
+        default:
+            return [Color(.darkGray), Color.gray]
+        }
     }
 }
-
-// MARK: - Preview
 
 struct CharacterRowView_Previews: PreviewProvider {
     static var previews: some View {
